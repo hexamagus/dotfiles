@@ -13,6 +13,7 @@ Bundle 'gmarik/vundle'
 " original repos on github
 "Plugin 'valloric/youcompleteme'
 Plugin 'jnurmine/Zenburn'
+Plugin 'maksimr/vim-jsbeautify'
 Plugin 'jistr/vim-nerdtree-tabs'
 Plugin 'kien/ctrlp.vim'
 Bundle 'tpope/vim-fugitive'
@@ -30,7 +31,6 @@ Bundle 'nvie/vim-flake8'
 Plugin 'vim-syntastic/syntastic'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'pangloss/vim-javascript'
-Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'tmhedberg/SimpylFold'
 Plugin 'vim-scripts/indentpython.vim'
 " vim-scripts repos
@@ -51,6 +51,7 @@ set pastetoggle=<F2>
 "Fix Shift+Tab
 nmap <S-Tab> <<
 imap <S-Tab> <Esc><<i
+inoremap jk <Esc>
 
 nmap <Leader>t :TagbarToggle<CR>
 nmap <Leader>n :NERDTreeToggle<CR>

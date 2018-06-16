@@ -149,7 +149,7 @@ if has("gui_running")
     " Remove toolbar
     set guioptions-=T
 else
-    colorscheme pablo
+    colorscheme desert
 endif
 
 

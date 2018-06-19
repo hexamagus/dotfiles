@@ -1,5 +1,10 @@
 set nocompatible
 filetype off
+let mapleader = "-"
+let maplocalleader = "\\"
+nnoremap <leader>d dd
+nnoremap <leader>ev :vsplit $MYVIMRC<cr>
+nnoremap <leader>sv :source $MYVIMRC<cr>
 
 set rtp+=~/.vim/bundle/Vundle.vim/
 call vundle#rc()
@@ -12,6 +17,7 @@ Bundle 'gmarik/vundle'
 "
 " original repos on github
 "Plugin 'valloric/youcompleteme'
+Plugin 'larsbs/vimterial_dark'
 Plugin 'jnurmine/Zenburn'
 Plugin 'maksimr/vim-jsbeautify'
 Plugin 'jistr/vim-nerdtree-tabs'
@@ -116,7 +122,7 @@ set backspace=indent,eol,start
 set nobackup
 set noswapfile
 
-language en_US
+language en_US.UTF-8
 
 set undodir=~/.vim_runtime/undodir
 set undofile
@@ -143,7 +149,7 @@ if has("gui_running")
     " Remove toolbar
     set guioptions-=T
 else
-    colorscheme pablo
+    colorscheme desert
 endif
 
 
@@ -222,9 +228,9 @@ nmap <silent> <c-j> :wincmd j<CR>
 nmap <silent> <c-h> :wincmd h<CR>
 nmap <silent> <c-l> :wincmd l<CR>
 
-let g:indent_guides_enable_on_vim_startup = 1
-let g:indent_guides_start_level=2
-let g:indent_guides_guide_size=1
+"let g:indent_guides_enable_on_vim_startup = 1
+"let g:indent_guides_start_level=2
+"let g:indent_guides_guide_size=1
 
 set ts=2 sw=2 noet
 
@@ -236,14 +242,14 @@ set foldlevel=99
 nnoremap <space> za
 
 "python with virtualenv support
-py << EOF
-import os
-import sys
-if 'VIRTUAL_ENV' in os.environ:
-  project_base_dir = os.environ['VIRTUAL_ENV']
-  activate_this = os.path.join(project_base_dir, 'bin/activate_this.py')
-  execfile(activate_this, dict(__file__=activate_this))
-EOF
+" py << EOF
+" import os
+" import sys
+" if 'VIRTUAL_ENV' in os.environ:
+"   project_base_dir = os.environ['VIRTUAL_ENV']
+"   activate_this = os.path.join(project_base_dir, 'bin/activate_this.py')
+"   execfile(activate_this, dict(__file__=activate_this))
+" EOF
 
 let python_highlight_all=1
 

@@ -70,7 +70,6 @@ plugins=(
   pip
   ssh-agent
   tmux
-  virtualenvwrapper
   vscode
   web-search
 )
@@ -95,7 +94,7 @@ source $ZSH/oh-my-zsh.sh
 # export ARCHFLAGS="-arch x86_64"
 
 # ssh
-# export SSH_KEY_PATH="~/.ssh/rsa_id"
+export SSH_KEY_PATH="~/.ssh/rsa_id"
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
@@ -110,8 +109,8 @@ rtorrent() {
 }
 
 # init virtualenvwrapper
-export WORKON_HOME=$HOME/.virtualenvs
-source /usr/bin/virtualenvwrapper.sh
+#export WORKON_HOME=$HOME/.virtualenvs
+#source /usr/bin/virtualenvwrapper.sh
 
 # start ssh-agent automatically, ensure there's only 1 instance
 #if ! pgrep -u "$USER" ssh-agent > /dev/null; then
@@ -120,4 +119,5 @@ source /usr/bin/virtualenvwrapper.sh
 #if [[ "$SSH_AGENT_PID" == "" ]]; then
 #    eval "$(<~/.ssh-agent-thing)"
 #fi
+
 export PATH=~/bin:$PATH

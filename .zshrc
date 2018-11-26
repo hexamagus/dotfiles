@@ -109,6 +109,7 @@ rtorrent() {
 }
 
 # init virtualenvwrapper
+<<<<<<< HEAD
 export WORKON_HOME=$HOME/.virtualenvs
 source /usr/bin/virtualenvwrapper.sh
 
@@ -130,3 +131,17 @@ alias git shp='git stash pop'
 alias gpom='git push origin master'
 # other
 alias grep='grep --color=auto'
+=======
+#export WORKON_HOME=$HOME/.virtualenvs
+#source /usr/bin/virtualenvwrapper.sh
+
+# start ssh-agent automatically, ensure there's only 1 instance
+#if ! pgrep -u "$USER" ssh-agent > /dev/null; then
+#    ssh-agent > ~/.ssh-agent-thing
+#fi
+#if [[ "$SSH_AGENT_PID" == "" ]]; then
+#    eval "$(<~/.ssh-agent-thing)"
+#fi
+
+export PATH=~/bin:$PATH
+>>>>>>> 4944ba583afa842fdc0fc258e67be00ab31124e5

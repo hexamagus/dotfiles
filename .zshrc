@@ -109,7 +109,6 @@ rtorrent() {
 }
 
 # init virtualenvwrapper
-<<<<<<< HEAD
 export WORKON_HOME=$HOME/.virtualenvs
 source /usr/bin/virtualenvwrapper.sh
 
@@ -121,8 +120,6 @@ if [[ "$SSH_AGENT_PID" == "" ]]; then
     eval "$(<~/.ssh-agent-thing)"
 fi
 
-export PATH=~/bin:$PATH
-
 # aliases
 # git
 alias git st='git status'
@@ -131,7 +128,6 @@ alias git shp='git stash pop'
 alias gpom='git push origin master'
 # other
 alias grep='grep --color=auto'
-=======
 #export WORKON_HOME=$HOME/.virtualenvs
 #source /usr/bin/virtualenvwrapper.sh
 
@@ -142,6 +138,6 @@ alias grep='grep --color=auto'
 #if [[ "$SSH_AGENT_PID" == "" ]]; then
 #    eval "$(<~/.ssh-agent-thing)"
 #fi
-
 export PATH=~/bin:$PATH
->>>>>>> 4944ba583afa842fdc0fc258e67be00ab31124e5
+export PATH=/home/paul/.cache/yay/bcompare/src/install/bin:$PATH
+#export PATH="/home/paul/miniconda3/bin:$PATH"

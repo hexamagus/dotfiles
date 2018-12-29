@@ -1,0 +1,44 @@
+directory: ~/Music
+library: ~/.config/beets/musiclibrary.db
+plugins: inline convert discogs embedart fetchart lyrics scrub gmusic info missing lastgenre
+
+import:
+  move: yes
+  write: yes
+
+discogs:
+  user_token: <discogs_api_key>
+
+fetchart:
+  google_key: <google_API_key>
+  sources: google *
+
+lyrics:
+  fallback: ''
+  google_API_key: <google_API_key>
+
+album_fields:
+    avgbitrate: |
+        total = 0
+        for item in items:
+            total += item.bitrate
+        return str(int((total / len(items)) / 1000)) + "kbps"
+
+gmusic:
+  email: <email>
+  password: <password>
+
+missing:
+  format: $albumartist - $album - $title
+  count: yes
+  total: no
+
+paths:
+  default: $albumartist/[$year] $album [$format $avgbitrate] %ifdef{$label} %ifdef{$catalognum}/$track - $title
+
+lastgenre:
+  canonical: yes
+  count: 3
+  fallback: ''
+  prefer_specific: yes
+  source: track

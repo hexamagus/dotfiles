@@ -142,3 +142,59 @@ alias grep='grep --color=auto'
 export PATH=~/bin:$PATH
 export PATH=/home/paul/.cache/yay/bcompare/src/install/bin:$PATH
 #export PATH="/home/paul/miniconda3/bin:$PATH"
+export FBFONT=/usr/share/kbd/consolefonts/ter-216n.psf.gz
+# Some example alias instructions
+# If these are enabled they will be used instead of any instructions
+# they may mask.  For example, alias rm='rm -i' will mask the rm
+# application.  To override the alias instruction use a \ before, ie
+# \rm will call the real rm not the alias.
+#
+# Interactive operation...
+alias rm='rm -i'
+alias cp='cp -i'
+alias mv='mv -i'
+alias mkdir='mkdir -p'
+#
+# Default to human readable figures
+alias df='df -h'
+alias du='du -kh'
+#
+# Misc :)
+alias less='less -r'                          # raw control characters
+alias whence='type -a'                        # where, of a sort
+alias grep='grep --color'                     # show differences in colour
+alias egrep='egrep --color=auto'              # show differences in colour
+alias fgrep='fgrep --color=auto'              # show differences in colour
+#
+# Some shortcuts for different directory listings
+alias ls='ls -hF --color=tty'                 # classify files in colour
+alias lx='ls -lXB'         #  Sort by extension.
+alias lk='ls -lSr'         #  Sort by size, biggest last.
+alias lt='ls -ltr'         #  Sort by date, most recent last.
+alias lc='ls -ltcr'        #  Sort by/show change time,most recent last.
+alias lu='ls -ltur'        #  Sort by/show access time,most recent last.
+alias lsd="ls -l | grep ^d"
+
+alias dir='ls --color=auto --format=vertical'
+alias vdir='ls --color=auto --format=long'
+alias cd..='cd ..'
+
+# The ubiquitous 'll': directories first, with alphanumeric sorting:
+alias ll="ls -lv --group-directories-first"
+alias lm='ll |more'        #  Pipe through 'more'
+alias lr='ll -R'           #  Recursive ls.
+alias la='ll -A'           #  Show hidden files. 
+alias lZ='ls -Z'	   #  Show SELinux contexts
+alias cds='cd /home/paul/src/conversion/data-acquisition'
+
+alias tmux="TERM=screen-256color-bce tmux"
+alias ducks="du -cks * | sort -rn | head"
+alias duhx="du -hx --max-depth=1 | sort -n -r"
+alias lsu='cut -d: -f1 /etc/passwd'
+alias clog="vim /var/log/lims/conversion_nz1.log"           
+alias cds="cd /storage/Clarapath\ Local\ Share/"
+alias limsdb="mysql -A -u lims -pmou53Brains! limsdb"
+alias rlimsdb="mysql -A -u root -pmou53Brains! limsdb"
+alias bouncel="trestart && service httpd restart"
+alias cdsrc="cd /home/paul/src2/"
+alias vi="vim"

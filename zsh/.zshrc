@@ -1,5 +1,9 @@
 # If you come from bash you might have to change your $PATH.
 export PATH=$HOME/bin:$PATH
+# Import colorscheme from 'wal' asynchronously
+# &   # Run the process in the background.
+# ( ) # Hide shell job control messages.
+(cat ~/.cache/wal/sequences &)
 
 # Path to your oh-my-zsh installation.
 export ZSH="/home/paul/.oh-my-zsh"
@@ -198,3 +202,6 @@ alias rlimsdb="mysql -A -u root -pmou53Brains! limsdb"
 alias bouncel="trestart && service httpd restart"
 alias cdsrc="cd /home/paul/src2/"
 alias vi="vim"
+alias wn="curl wttr.in/new_york"
+# Import the colors.
+. "${HOME}/.cache/wal/colors.sh"

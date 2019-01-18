@@ -55,8 +55,12 @@ bindsym $mod+shift+x exec betterlockscreen -l blur
 bindsym $mod+Shift+q kill
 
 # Open dmenu 
-#bindsym $mod+d exec dmenu_run
-bindsym $mod+d exec dmenu_run -fn 'Overpass Mono:pixelsize=15' -l 3 -nf '#707880' -sf '#cc6666' -nb '#1d1f21' -sb '#1d1f21'
+# dmenu / rofi
+bindsym $mod+d exec --no-startup-id i3-dmenu-desktop --dmenu='rofi -i -dmenu -width 40 -lines 8 -font "San Francisco Display 18"'
+bindsym Print exec "maim -u -s -n -l -c 0.157,0.333,0.466,0.4 ~/Pictures/Screenshot-$(date -Iseconds | cut -d'+' -f1).png"
+#bindsym Mod4+Print exec "maim -s | xclip -selection clipboard -t image/png"
+bindsym Mod4+Print exec "maim -u -s -n -l -c 0.157,0.333,0.466,0.4 | xclip -selection clipboard -t image/png"
+
 
 # Change focus
 bindsym $mod+h focus left
@@ -197,7 +201,7 @@ exec_always --no-startup-id wal -R -n
 
 # Apply a background different than the one used by wal
 # If this isn't needed, remove it and remove -n flag from the above command
-exec_always --no-startup-id feh --bg-fill ~/Pictures/Wal/bg1.jpg
+#exec_always --no-startup-id feh --bg-fill ~/Pictures/Wal/bg1.jpg
 
 # Execute polybar on launch. Script kills current ones on i3 refresh, otherwise they duplicate
 #exec_always --no-startup-id $HOME/.config/polybar/launch.sh
@@ -232,14 +236,9 @@ for_window [class="meld"] floating enable; border none
 for_window [class="^.*"] border pixel 0
 
 exec --no-startup-id compton
-# If using compton and nitrogen change below
-exec --no-startup-id nitrogen --restore; sleep 1; compton -b
-#exec --no-startup-id nitrogen --restore; sleep o
-
 # Set display resolution
 exec_always --no-startup-id xrandr --output eDP1 --mode 1920x1080 --rate 60.02
 
 # set desktop background with custom effect
-#exec --no-startup-id betterlockscreen -w dim
-# Alternative (set last used background)
 exec --no-startup-id source ~/.fehbg
+assign [class="google-chrome-stable"] 1

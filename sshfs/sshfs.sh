@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 sshfs \
-	octal@kepler.whatbox.ca:/home/octal/files/music/redbetter_again ~/mnt/redbetter_transcodes \
+	octal@maven.whatbox.ca:/home/octal/files/music/redbetter_again ~/mnt/redbetter_transcodes \
 	-o ServerAliveInterval=15 \
         -o ServerAliveCountMax=20 \
         -o reconnect \
@@ -18,7 +18,7 @@ sshfs \
 
 
 sshfs \
-	octal@kepler.whatbox.ca:/home/octal/files/music/ ~/mnt/music_kepler \
+	octal@maven.whatbox.ca:/home/octal/files/music/ ~/mnt/music_kepler \
 	-o ServerAliveInterval=15 \
         -o ServerAliveCountMax=20 \
         -o reconnect \
